@@ -4,15 +4,14 @@ namespace UnitTestAndDebug
 {
     public class Person
     {
+       private string name;
+
+        private string id; 
         public Person(string name, string id)
         {
             this.Name = name;
             this.ID = id;
         }
-
-        private string name;
-
-        private string id;
 
         public string Name
         {

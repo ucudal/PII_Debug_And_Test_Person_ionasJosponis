@@ -14,14 +14,12 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "publish",
+            "label": "clean",
             "command": "dotnet",
             "type": "process",
             "args": [
-                "publish",
-                "${workspaceFolder}/src/Program/Program.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "clean",
+                "${workspaceFolder}"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -31,9 +29,10 @@
             "type": "process",
             "args": [
                 "test",
-                "${workspaceFolder}/test/Library.Test/Library.Test.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "${workspaceFolder}/tests/Library.Tests.csproj",
+                "/p:CollectCoverage=true",
+                "/p:CoverletOutputFormat=lcov",
+                "/p:CoverletOutput=lcov.info"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -56,9 +55,8 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/src/Program/Program.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
+                "--project",
+                "${workspaceFolder}/src/Program/Program.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
